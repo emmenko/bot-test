@@ -2,6 +2,9 @@ stack:
   create:
     trigger:
       status: success
+      issuers:
+        # Only from PRs
+        - continuous-integration/travis-ci/pr
     branches:
       only:
         - /nm-/
