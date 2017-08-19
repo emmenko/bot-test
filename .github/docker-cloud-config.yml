@@ -9,15 +9,16 @@ branches:
     - t1
 
 stack:
-  serviceName: nginx-test
   imageRepo: nginx
-  environment:
-    - NGINX_PORT=80
   innerPort: 80
   outerPortRangeMin: 8000
-  tags:
-    - mcng
-    - staging
-  targetNumContainers: 1
-  autorestart: ALWAYS
-    
+  template:
+    name: nginx-test
+    target_num_containers: 1
+    container_envvars:
+      - key: NGINX_PORT
+        value: 80
+    tags:
+      - mcng
+      - staging
+    autorestart: ALWAYS    
