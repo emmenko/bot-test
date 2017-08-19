@@ -3,11 +3,11 @@ trigger:
   issuers:
     # Only from PRs
     - continuous-integration/travis-ci/pr
-branches:
-  only:
-    - /nm-/
-    - t1
-    - latest
+#branches:
+#  only:
+#    - /nm-/
+#    - t1
+#    - latest
 
 stack:
   imageRepo: dockercloud/haproxy
