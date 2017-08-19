@@ -1,0 +1,4 @@
+stack:
+  create:
+    trigger:
+      status: success
