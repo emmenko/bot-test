@@ -2,3 +2,7 @@ stack:
   create:
     trigger:
       status: success
+    branches:
+      only:
+        - /nm-/
+        - t1
