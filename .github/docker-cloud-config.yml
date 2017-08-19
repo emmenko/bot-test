@@ -7,17 +7,15 @@ branches:
   only:
     - /nm-/
     - t1
+    - latest
 
 stack:
-  imageRepo: nginx
+  imageRepo: dockercloud/haproxy
   innerPort: 80
   outerPortRangeMin: 8000
   template:
-    name: nginx-test
+    name: haproxy-test
     target_num_containers: 1
-    container_envvars:
-      - key: NGINX_PORT
-        value: 80
     tags:
       - mcng
       - staging
