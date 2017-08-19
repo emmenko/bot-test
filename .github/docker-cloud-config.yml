@@ -1,11 +1,22 @@
+trigger:
+  status: success
+  issuers:
+    # Only from PRs
+    - continuous-integration/travis-ci/pr
+branches:
+  only:
+    - /nm-/
+    - t1
+
 stack:
-  create:
-    trigger:
-      status: success
-      issuers:
-        # Only from PRs
-        - continuous-integration/travis-ci/pr
-    branches:
-      only:
-        - /nm-/
-        - t1
+  serviceName: nginx-test
+  imageRepo: nginx
+  environment:
+    - NGINX_PORT=80
+  innerPort: 80
+  tags:
+    - mcng
+    - staging
+  targetNumContainers: 1
+  autorestart: ALWAYS
+    
