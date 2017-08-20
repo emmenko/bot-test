@@ -3,6 +3,12 @@ trigger:
   issuers:
     # Only from PRs
     - continuous-integration/travis-ci/pr
+
+notify:
+  onCreate: true
+  onUpdate: true
+  onDelete: true
+
 #branches:
 #  only:
 #    - /nm-/
